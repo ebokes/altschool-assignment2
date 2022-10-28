@@ -88,7 +88,7 @@ export const Menu = styled.ul`
   }
 `;
 
-export const Logo = styled.a`
+export const Logo = styled(NavLink)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,7 +125,7 @@ export const HamburgerStyle = styled.span`
   }
 `;
 
-export const ButtonLink = styled.a`
+export const ButtonLink = styled(NavLink)`
   color: ${({ theme }) => theme.color.black};
   display: flex;
   transition: all 0.4s;
@@ -159,4 +159,45 @@ export const ButtonLink = styled.a`
       transform: scaleX(0);
     }
   }
+`;
+
+export const ContactLink = styled(NavLink)`
+  background-color: ${({ theme }) => theme.color.primary};
+  color: ${({ theme }) => theme.color.black};
+  display: flex;
+  transition: all 0.4s;
+  position: relative;
+  padding: 1rem 2rem;
+  /* padding-bottom: 0.3rem; */
+  transition: all 0.5s ease-in-out;
+  font-family: "Istok Web", sans-serif;
+  font-weight: 600;
+  border-radius: 2rem;
+  margin-bottom: 0.3rem;
+  outline: red;
+
+  :hover {
+    color: #fff;
+  }
+
+  /* &::before {
+    content: "";
+    width: 100%;
+    height: 0.2rem;
+    background-color: #feb72b;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: transform 250ms ease-in;
+    transform: scaleX(0);
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+    background-color: #feb72b;
+
+    @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
+      transform: scaleX(0);
+    }
+  } */
 `;

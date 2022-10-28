@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Section } from "../../components/reuseable";
 import bg from "../../assets/bg.jpg";
+import { NavLink } from "react-router-dom";
 
 export const HomeSection = styled(Section)`
   background: url(${bg});
@@ -62,3 +63,4 @@ export const Col2 = styled.div`
 export const ImgWrapper = styled.div`
   height: 100%;
 `;
+export const More = styled(NavLink)``;

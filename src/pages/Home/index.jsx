@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "../../components/reuseable";
-import { Col1, Col2, HomeSection, ImgWrapper, Row } from "./styles";
+import { Col1, Col2, HomeSection, ImgWrapper, More, Row } from "./styles";
 import lady from "../../assets/lady.png";
 
 const Home = () => {
@@ -15,10 +15,11 @@ const Home = () => {
               IT-BUSINESS
             </h1>
             <p>
-              Monotonectally seize go forward intellectual capital rather than
-              high fabricate accurate materials rather than team building.
+              Our company has been developi high-quality and reliable softwar
+              corporate needs since 2011 is renowned professionals of soft
+              development.
             </p>
-            <a href="#">learn more</a>
+            <More to="/contact">learn more</More>
           </Col1>
           <Col2>
             <img src={lady} alt="happy-lady" />

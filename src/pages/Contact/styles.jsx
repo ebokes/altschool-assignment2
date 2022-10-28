@@ -5,7 +5,9 @@ import map from "../../assets/map-bg.png";
 export const ContactSection = styled(Section)`
   background: url(${map});
 `;
-export const ContactWrapper = styled.div``;
+export const ContactWrapper = styled.div`
+  margin: 4rem 0;
+`;
 export const Heading = styled.div`
   margin: 0 auto;
   display: flex;
@@ -28,6 +30,8 @@ export const InputWrapper = styled.div`
     border-radius: 0.5rem;
     background-color: #ffffff33;
     border-color: transparent;
+    font-size: 1.6rem;
+    outline: none;
 
     &::placeholder {
       color: #fff;
@@ -44,6 +48,8 @@ export const MessageStyle = styled.div`
     background-color: #ffffff33;
     border-color: transparent;
     margin-top: 3rem;
+    font-size: 1.6rem;
+    outline: none;
 
     &::placeholder {
       color: #fff;
@@ -60,4 +66,7 @@ export const Btn = styled.button`
   background-color: ${({ theme }) => theme.color.primary};
   text-transform: uppercase;
   margin-top: 2rem;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
 `;

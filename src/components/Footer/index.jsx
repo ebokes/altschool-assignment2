@@ -6,7 +6,8 @@ const Footer = () => {
     <FooterContainer>
       <FooterContent>
         <p>
-          © Copyright 2021 <span>Alto</span> All Rights Reserved.
+          © Copyright 2021 <span>Alto</span> All Rights Reserved. Built by
+          Chibuokem Egbuchulam
         </p>
       </FooterContent>
     </FooterContainer>

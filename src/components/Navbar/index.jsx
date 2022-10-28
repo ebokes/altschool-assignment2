@@ -8,6 +8,7 @@ import {
   ButtonLink,
   HamburgerStyle,
   Menu,
+  ContactLink,
 } from "./styles";
 import { Sling as Hamburger } from "hamburger-react";
 import navData from "./navbarData";
@@ -25,7 +26,7 @@ const Navbar = () => {
     <ClickAwayListener onClickAway={handleClickAway}>
       <Header>
         <NavContainer>
-          <Logo href="#home">
+          <Logo to="/">
             <h2>Alto</h2>
           </Logo>
           <HamburgerStyle>
@@ -50,9 +51,9 @@ const Navbar = () => {
               </ButtonLink>
             </li>
             <li>
-              <ButtonLink onClick={handleClose} to="/">
-                Contact+
-              </ButtonLink>
+              <ContactLink onClick={handleClose} to="/contact">
+                Contact
+              </ContactLink>
             </li>
           </Menu>
         </NavContainer>
