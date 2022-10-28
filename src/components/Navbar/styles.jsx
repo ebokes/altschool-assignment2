@@ -37,9 +37,9 @@ export const Menu = styled.ul`
     justify-content: flex-start;
     flex-direction: column;
     position: absolute;
-    top: 6.12rem;
+    top: 8.2rem;
     right: 0;
-    background-color: rgb(0, 16, 46);
+    background-color: ${({ theme }) => theme.color.white};
     padding-left: 2rem;
     height: 100vh;
     animation: slideOut 0.5s ease-in;
@@ -137,6 +137,61 @@ export const ButtonLink = styled(NavLink)`
 
   :hover {
     color: #feb72b;
+
+    @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
+      color: #000;
+    }
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 0.2rem;
+    background-color: #feb72b;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: transform 250ms ease-in;
+    transform: scaleX(0);
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+    background-color: #feb72b;
+
+    @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
+      transform: scaleX(0);
+      color: ${({ theme }) => theme.color.black};
+    }
+  }
+`;
+
+export const ContactLink = styled(NavLink)`
+  background-color: ${({ theme }) => theme.color.primary};
+  color: ${({ theme }) => theme.color.black};
+  display: flex;
+  transition: all 0.4s;
+  position: relative;
+  padding: 1rem 2rem;
+  /* padding-bottom: 0.3rem; */
+  transition: all 0.5s ease-in-out;
+  font-family: "Istok Web", sans-serif;
+  font-weight: 600;
+  border-radius: 2rem;
+  margin-bottom: 0.3rem;
+  outline: red;
+
+  :hover {
+    color: #fff;
+    @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
+      color: #000;
+    }
+  }
+
+  @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
+    background-color: transparent;
+    padding: 0;
+    /* color: ${({ theme }) => theme.color.white}; */
   }
 
   &::before {
@@ -159,45 +214,4 @@ export const ButtonLink = styled(NavLink)`
       transform: scaleX(0);
     }
   }
-`;
-
-export const ContactLink = styled(NavLink)`
-  background-color: ${({ theme }) => theme.color.primary};
-  color: ${({ theme }) => theme.color.black};
-  display: flex;
-  transition: all 0.4s;
-  position: relative;
-  padding: 1rem 2rem;
-  /* padding-bottom: 0.3rem; */
-  transition: all 0.5s ease-in-out;
-  font-family: "Istok Web", sans-serif;
-  font-weight: 600;
-  border-radius: 2rem;
-  margin-bottom: 0.3rem;
-  outline: red;
-
-  :hover {
-    color: #fff;
-  }
-
-  /* &::before {
-    content: "";
-    width: 100%;
-    height: 0.2rem;
-    background-color: #feb72b;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: transform 250ms ease-in;
-    transform: scaleX(0);
-  }
-
-  &:hover::before {
-    transform: scaleX(1);
-    background-color: #feb72b;
-
-    @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
-      transform: scaleX(0);
-    }
-  } */
 `;

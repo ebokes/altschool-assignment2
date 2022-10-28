@@ -25,13 +25,17 @@ export const InputWrapper = styled.div`
   column-gap: 3rem;
 
   input {
-    width: 48%;
+    width: 47%;
     padding: 1rem;
     border-radius: 0.5rem;
     background-color: #ffffff33;
     border-color: transparent;
     font-size: 1.6rem;
     outline: none;
+
+    @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
+      width: 100%;
+    }
 
     &::placeholder {
       color: #fff;

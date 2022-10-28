@@ -15,7 +15,7 @@ const Home = () => {
               IT-BUSINESS
             </h1>
             <p>
-              Our company has been developi high-quality and reliable softwar
+              Our company has been developing high-quality and reliable software
               corporate needs since 2011 is renowned professionals of soft
               development.
             </p>

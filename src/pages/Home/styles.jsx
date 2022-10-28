@@ -25,6 +25,11 @@ export const Col1 = styled.div`
   font-family: "Istok Web", sans-serif;
   color: ${({ theme }) => theme.color.white};
 
+  @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
+    width: 100%;
+    text-align: center;
+  }
+
   h4 {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -54,10 +59,19 @@ export const Col1 = styled.div`
 export const Col2 = styled.div`
   width: 50%;
   height: 100%;
+
+  @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
+    display: none;
+  }
+
   img {
     max-width: 100%;
     position: absolute;
     bottom: 0rem;
+
+    @media screen and (max-width: 1300px) {
+      width: 50%;
+    }
   }
 `;
 export const ImgWrapper = styled.div`

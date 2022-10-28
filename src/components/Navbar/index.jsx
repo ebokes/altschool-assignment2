@@ -11,7 +11,6 @@ import {
   ContactLink,
 } from "./styles";
 import { Sling as Hamburger } from "hamburger-react";
-import navData from "./navbarData";
 
 const Navbar = () => {
   // const [navColor, setNavColor] = useState(false);
@@ -37,6 +36,7 @@ const Navbar = () => {
               rounded
               label="Show menu"
               padding={0}
+              color="#000"
             />
           </HamburgerStyle>
           <Menu isOpen={isOpen}>
