@@ -13,7 +13,7 @@ export const Header = styled.header`
   justify-content: space-between;
   background-color: ${({ theme }) => theme.color.white};
   box-shadow: 0 0;
-  /* border-bottom: 0.1rem solid #c4c4c4; */
+  border-bottom: 0.1rem solid #c4c4c4;
 `;
 
 export const NavContainer = styled.nav`
@@ -194,7 +194,7 @@ export const ContactLink = styled(NavLink)`
     /* color: ${({ theme }) => theme.color.white}; */
   }
 
-  &::before {
+  /* &::before {
     content: "";
     width: 100%;
     height: 0.2rem;
@@ -212,6 +212,6 @@ export const ContactLink = styled(NavLink)`
 
     @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
       transform: scaleX(0);
-    }
-  }
+    } */
+  /* } */
 `;

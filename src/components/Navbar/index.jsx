@@ -46,8 +46,8 @@ const Navbar = () => {
               </ButtonLink>
             </li>
             <li>
-              <ButtonLink onClick={handleClose} to="/user">
-                User+
+              <ButtonLink onClick={handleClose} to="/profile">
+                Profile+
               </ButtonLink>
             </li>
             <li>

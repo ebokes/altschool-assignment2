@@ -8,6 +8,9 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import { Route, Routes } from "react-router-dom";
+import Profile from "./pages/Profile";
+import ErrorPage from "./pages/Error/ErrorPage";
+import ErrorBoundary from "./pages/Error/ErrorBoundary";
 
 function App() {
   const theme = {
@@ -30,14 +33,19 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-        <Footer />
+        <ErrorBoundary>
+          <GlobalStyles />
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/profile" element={<Profile />}>
+              <Route path="users" element={<Users />} />
+            </Route>
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+          <Footer />
+        </ErrorBoundary>
       </ThemeProvider>
     </>
   );
