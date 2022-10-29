@@ -7,15 +7,17 @@ import {
   Card,
   CardWrapper,
   Paginate,
+  Row1,
+  Row2,
   UsersContainer,
   UsersWrapper,
 } from "./styles";
+import { BackDrop, MainHeading } from "../About/styles";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
-  // const [page, setPage] = useState(1);
 
   const client = axios.create({
     baseURL: "https://randomuser.me/",
@@ -49,21 +51,28 @@ const Users = () => {
 
   return (
     <UsersWrapper>
+      <BackDrop>
+        <MainHeading>Subscribers</MainHeading>
+      </BackDrop>
       <UsersContainer>
         <CardWrapper>
           {users?.slice(skip, skip + PER_PAGE).map((user) => (
             <Card key={user.login.uuid}>
+              <span />
               <img src={user.picture.large} alt="avatar" />
-              <h3>
-                {user.name.first} {""} {user.name.last}
-              </h3>
-              <p>{user.email}</p>
-              <p>@{user.login.username}</p>
-              <div>
+
+              <Row1>
+                <h3>
+                  {user.name.first} {""} {user.name.last}
+                </h3>
+                <p>{user.email}</p>
+                <p>@{user.login.username}</p>
+              </Row1>
+              <Row2>
                 <p>Phone: {user.cell}</p>
                 <p>Age: {user.dob.age}</p>
                 <p>Country: {user.location.country}</p>
-              </div>
+              </Row2>
             </Card>
           ))}
         </CardWrapper>

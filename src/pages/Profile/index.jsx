@@ -16,9 +16,7 @@ const Profile = () => {
     <Section>
       <Container>
         <ProfileWrapper>
-          <h2>
-            Web page undergoing Construction, Please check back in an hour
-          </h2>
+          <h2>Profile Page</h2>
           <ProfileContainer>
             <SideBar>
               <li>

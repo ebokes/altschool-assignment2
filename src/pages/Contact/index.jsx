@@ -36,8 +36,6 @@ const Contact = () => {
                 id="message"
                 name="message"
                 placeholder="Write your notes or questions here"
-                // value={formInfo.message}
-                // onChange={onChange}
                 required
               />
             </MessageStyle>

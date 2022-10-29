@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "../../components/reuseable";
-import { Col1, Col2, HomeSection, ImgWrapper, More, Row } from "./styles";
+import { Col1, Col2, HomeSection, More, Row } from "./styles";
 import lady from "../../assets/lady.png";
 
 const Home = () => {

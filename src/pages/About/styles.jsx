@@ -1,7 +1,7 @@
 import styled from "styled-components";
+import bg from "../../assets/bd-bg.jpg";
 
 export const AboutContainer = styled.section`
-  width: 95%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,17 +17,27 @@ export const AboutContainer = styled.section`
     font-size: 2.7rem;
   }
 `;
+
+export const BackDrop = styled.div`
+  background: url(${bg});
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
+`;
 export const MainHeading = styled.h1`
   font-size: 3.5rem;
   display: inline-block;
-  margin: 3rem 0;
+  margin: 4rem 0;
+  color: ${({ theme }) => theme.color.white};
 `;
 export const SubHeading = styled.div`
   margin-top: 4rem;
 `;
 export const Row = styled.div`
   display: flex;
-  width: 100%;
+  width: 95%;
   gap: 2rem;
   align-items: center;
 

@@ -1,6 +1,7 @@
 import React from "react";
 import {
   AboutContainer,
+  BackDrop,
   Body,
   Col1,
   Col2,
@@ -13,7 +14,9 @@ import abc from "../../assets/abc.png";
 const About = () => {
   return (
     <AboutContainer>
-      <MainHeading>About Us</MainHeading>
+      <BackDrop>
+        <MainHeading>About Us</MainHeading>
+      </BackDrop>
       <Row>
         <Col2>
           <img src={abc} alt="" />
