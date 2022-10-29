@@ -11,12 +11,14 @@ import { Route, Routes } from "react-router-dom";
 import Profile from "./pages/Profile";
 import ErrorPage from "./pages/Error/ErrorPage";
 import ErrorBoundary from "./pages/Error/ErrorBoundary";
+import About from "./pages/About";
 
 function App() {
   const theme = {
     color: {
       primary: "#ffbb00",
       secondary: "#232434",
+      border: "#ccc",
       black: "#000",
       white: "#fff",
       transparent: "transparent",
@@ -40,6 +42,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />}>
               <Route path="users" element={<Users />} />
+              <Route path="about" element={<About />} />
             </Route>
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<ErrorPage />} />

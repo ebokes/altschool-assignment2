@@ -6,7 +6,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-    color: rgba(255, 255, 255, 0.87);
+    /* color: rgba(255, 255, 255, 0.87); */
   /* background-color: #242424; */
 }
 
@@ -18,7 +18,7 @@ html{
         font-size: 60%;    
     }
 
-    @media screen and (max-width: ${({ theme }) => theme.screens.md}){
+    /* @media screen and (max-width: ${({ theme }) => theme.screens.md}){
         font-size: 58%;
     }
 
@@ -27,7 +27,7 @@ html{
     }
     @media screen and (max-width: 340px){
         font-size: 50%;
-    }
+    } */
 }
 
 body{

@@ -1,27 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { Container, Section } from "../../components/reuseable";
-import { ProfileContainer, ProfileLinks } from "./styles";
+import {
+  Output,
+  ProfileContainer,
+  ProfileLinks,
+  ProfileWrapper,
+  SideBar,
+} from "./styles";
 
 const Profile = () => {
+  const [show, setShow] = useState(false);
+  const handleShow = () => setShow(true);
   return (
     <Section>
       <Container>
-        <ProfileContainer>
+        <ProfileWrapper>
           <h2>
             Web page undergoing Construction, Please check back in an hour
           </h2>
-          <ul>
-            <li>
-              <ProfileLinks to="/users">Users</ProfileLinks>
-            </li>
-            <li>
-              <ProfileLinks to="/about">About</ProfileLinks>
-            </li>
-          </ul>
-        </ProfileContainer>
+          <ProfileContainer>
+            <SideBar>
+              <li>
+                <ProfileLinks onClick={handleShow} to="/profile/users">
+                  Users
+                </ProfileLinks>
+              </li>
+              <li>
+                <ProfileLinks onClick={handleShow} to="/profile/about">
+                  About
+                </ProfileLinks>
+              </li>
+            </SideBar>
+            {show && (
+              <Output>
+                <div>
+                  <Outlet />
+                </div>
+              </Output>
+            )}
+          </ProfileContainer>
+        </ProfileWrapper>
       </Container>
-      <Outlet />
     </Section>
   );
 };

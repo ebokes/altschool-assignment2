@@ -15,6 +15,8 @@ export const Heading = styled.div`
   align-items: center;
   flex-direction: column;
   margin-bottom: 3rem;
+  color: ${({ theme }) => theme.color.white};
+  font-size: 3rem;
 `;
 export const InputWrapper = styled.div`
   display: flex;
@@ -42,6 +44,17 @@ export const InputWrapper = styled.div`
       font-size: 1.6rem;
       font-weight: 500;
     }
+    /* 
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 30px #ffffff33 inset !important;
+      box-shadow: 0 0 0 30px #ffffff33 inset !important;
+    }
+    &:-webkit-autofill {
+      -webkit-text-fill-color: #fff !important;
+    } */
   }
 `;
 export const MessageStyle = styled.div`

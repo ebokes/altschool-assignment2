@@ -20,37 +20,14 @@ const Contact = () => {
           </Heading>
           <form>
             <InputWrapper>
-              <input
-                placeholder="Name"
-                name="name"
-                type="text"
-                required
-                //   value={formInfo[name]}
-                //   onChange={onChange}
-              />
-              <input
-                placeholder="Email"
-                name="email"
-                type="email"
-                required
-                //   value={formInfo[name]}
-                //   onChange={onChange}
-              />
-              <input
-                placeholder="Phone"
-                name="phone"
-                type="phone"
-                required
-                //   value={formInfo[name]}
-                //   onChange={onChange}
-              />
+              <input placeholder="Name" name="name" type="text" required />
+              <input placeholder="Email" name="email" type="email" required />
+              <input placeholder="Phone" name="phone" type="phone" required />
               <input
                 placeholder="Website"
                 name="website"
                 type="text"
                 required
-                //   value={formInfo[input.name]}
-                //   onChange={onChange}
               />
             </InputWrapper>
             <MessageStyle>
