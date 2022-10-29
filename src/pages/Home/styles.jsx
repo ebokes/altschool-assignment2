@@ -11,6 +11,7 @@ export const HomeSection = styled(Section)`
   background-size: cover;
   overflow: hidden;
   position: relative;
+  /* padding: 0; */
 `;
 
 export const Row = styled.div`
@@ -19,7 +20,12 @@ export const Row = styled.div`
   align-items: center;
   width: 100%;
   margin-top: 20rem;
+
+  @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
+    margin-top: 15rem;
+  }
 `;
+
 export const Col1 = styled.div`
   width: 50%;
   font-family: "Istok Web", sans-serif;
@@ -36,7 +42,7 @@ export const Col1 = styled.div`
   }
 
   h1 {
-    font-size: 8rem;
+    font-size: 6rem;
     font-weight: 700;
     font-family: "Rajdhani", sans-serif;
     line-height: 1;
@@ -67,14 +73,16 @@ export const Col2 = styled.div`
   img {
     max-width: 100%;
     position: absolute;
-    bottom: 0rem;
+    bottom: 0;
 
     @media screen and (max-width: 1300px) {
       width: 50%;
     }
   }
 `;
+
 export const ImgWrapper = styled.div`
   height: 100%;
 `;
+
 export const More = styled(NavLink)``;

@@ -6,7 +6,10 @@ import {
   ButtonGroup,
   Card,
   CardWrapper,
+  Next,
+  Pagebtn,
   Paginate,
+  Prev,
   Row1,
   Row2,
   UsersContainer,
@@ -81,26 +84,27 @@ const Users = () => {
             Pages: {page} of {pages}
           </p>
           <ButtonGroup>
-            <button
+            <Prev
               disabled={page <= 1}
+              aria-disabled={page <= 1}
               onClick={() => setPage((prev) => prev - 1)}
             >
               Prev
-            </button>
+            </Prev>
             {Array.from({ length: pages }, (value, index) => index + 1).map(
               (user) => (
-                <button key={user} onClick={() => setPage(user)}>
+                <Pagebtn key={user} onClick={() => setPage(user)}>
                   {user}
-                </button>
+                </Pagebtn>
               )
             )}
-            <button
+            <Next
               disabled={page >= pages}
               aria-disabled={page >= pages}
               onClick={() => setPage((prev) => prev + 1)}
             >
               Next
-            </button>
+            </Next>
           </ButtonGroup>
         </Paginate>
       </UsersContainer>

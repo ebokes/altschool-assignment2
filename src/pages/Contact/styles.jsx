@@ -34,6 +34,7 @@ export const InputWrapper = styled.div`
     border-color: transparent;
     font-size: 1.6rem;
     outline: none;
+    color: ${({ theme }) => theme.color.white};
 
     @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
       width: 100%;
@@ -56,6 +57,7 @@ export const MessageStyle = styled.div`
     margin-top: 3rem;
     font-size: 1.6rem;
     outline: none;
+    color: ${({ theme }) => theme.color.white};
 
     &::placeholder {
       color: #fff;

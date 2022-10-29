@@ -119,6 +119,7 @@ export const HamburgerStyle = styled.span`
 
   @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
     display: inline-block;
+    /* cursor: ; */
   }
   @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
     padding-right: 2%;

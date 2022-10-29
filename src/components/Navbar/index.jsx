@@ -42,12 +42,12 @@ const Navbar = () => {
           <Menu isOpen={isOpen}>
             <li>
               <ButtonLink onClick={handleClose} to="/">
-                Home+
+                Home
               </ButtonLink>
             </li>
             <li>
               <ButtonLink onClick={handleClose} to="/profile">
-                Profile+
+                Profile
               </ButtonLink>
             </li>
             <li>
