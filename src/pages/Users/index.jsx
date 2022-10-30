@@ -55,7 +55,7 @@ const Users = () => {
   return (
     <UsersWrapper>
       <BackDrop>
-        <MainHeading>Subscribers</MainHeading>
+        <MainHeading>Our Subscribers</MainHeading>
       </BackDrop>
       <UsersContainer>
         <CardWrapper>

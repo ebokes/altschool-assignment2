@@ -8,6 +8,10 @@ export const FooterContainer = styled.footer`
   overflow: hidden;
   display: flex;
   align-items: center;
+
+  span {
+    color: ${({ theme }) => theme.color.primary};
+  }
 `;
 export const FooterContent = styled.div`
   max-width: 120rem;

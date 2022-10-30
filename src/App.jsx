@@ -6,7 +6,6 @@ import { lazy, Suspense } from "react";
 import Loading from "./components/Loading";
 import ErrorPage from "./pages/Error/ErrorPage";
 
-// import Users from "./pages/Users/index";
 let Navbar = lazy(() => import("./components/Navbar"));
 let Home = lazy(() => import("./pages/Home"));
 let Contact = lazy(() => import("./pages/Contact"));
@@ -14,6 +13,7 @@ let Footer = lazy(() => import("./components/Footer"));
 let Profile = lazy(() => import("./pages/Profile"));
 let About = lazy(() => import("./pages/About"));
 let Users = lazy(() => import("./pages/Users/index"));
+let Values = lazy(() => import("./pages/Values/index"));
 
 function App() {
   const theme = {
@@ -46,6 +46,7 @@ function App() {
               <Route path="/profile" element={<Profile />}>
                 <Route path="users" element={<Users />} />
                 <Route path="about" element={<About />} />
+                <Route path=":values" element={<Values />} />
               </Route>
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<ErrorPage />} />

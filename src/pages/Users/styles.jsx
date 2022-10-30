@@ -80,7 +80,6 @@ export const ButtonGroup = styled.div`
     padding: 0.5rem 0;
     text-align: center;
     border-radius: 0.4rem;
-    /* border: none; */
     cursor: pointer;
   }
 `;
@@ -90,16 +89,9 @@ export const Prev = styled.button`
 `;
 
 export const Pagebtn = styled.button`
-  /* width: 4rem; */
   background-color: ${({ theme }) => theme.color.secondary};
   color: ${({ theme }) => theme.color.primary};
-  /* font-weight: 600; */
   border: 1px solid ${({ theme }) => theme.color.primary};
-  /* padding: 0.5rem 0; */
-  /* text-align: center; */
-  /* border-radius: 0.4rem; */
-
-  /* cursor: pointer; */
 `;
 
 export const Next = styled.button`

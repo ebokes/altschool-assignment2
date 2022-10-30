@@ -1,8 +1,18 @@
 import styled from "styled-components";
 
 export const ProfileWrapper = styled.div`
-  height: 90vh;
+  & > h2 {
+    color: ${({ theme }) => theme.color.black};
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  & > p {
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
+  }
 `;
+
 export const ProfileContainer = styled.div`
   color: ${({ theme }) => theme.color.black};
   display: flex;
@@ -15,17 +25,10 @@ export const ProfileContainer = styled.div`
     width: 100%;
     flex-direction: column;
   }
-
-  h2 {
-    color: ${({ theme }) => theme.color.black};
-    margin-bottom: 3rem;
-  }
 `;
 
 export const SideBar = styled.ul`
   width: 10%;
-  /* border: 1px solid ${({ theme }) => theme.color.border}; */
-  /* padding: 2rem; */
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
@@ -49,11 +52,7 @@ export const SideBar = styled.ul`
 `;
 
 export const Output = styled.div`
-  /* border: 2px solid ${({ theme }) => theme.color.border}; */
-  width: 90%;
-  height: 80vh;
-  overflow-y: scroll;
-
+  width: 95%;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   @media screen and (max-width: ${({ theme }) => theme.screens.md}) {

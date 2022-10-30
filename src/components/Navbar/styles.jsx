@@ -25,6 +25,32 @@ export const NavContainer = styled.nav`
   margin: 0 auto;
 `;
 
+export const Logo = styled(NavLink)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 7rem;
+  height: 3.5rem;
+  border-top: 0.2rem solid ${({ theme }) => theme.color.black};
+  border-bottom: 0.2rem solid ${({ theme }) => theme.color.black};
+  font-family: "Istok Web", sans-serif;
+  font-weight: 600;
+
+  @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
+    margin-left: 2.5%;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    color: ${({ theme }) => theme.color.black};
+
+    span {
+      color: ${({ theme }) => theme.color.primary};
+    }
+  }
+`;
+
 export const Menu = styled.ul`
   display: none;
   text-transform: uppercase;
@@ -162,28 +188,6 @@ export const Menu = styled.ul`
         padding-right: 2.5rem;
       }
     }
-  }
-`;
-
-export const Logo = styled(NavLink)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-  width: 7rem;
-  height: 3.5rem;
-  border-top: 0.2rem solid ${({ theme }) => theme.color.black};
-  border-bottom: 0.2rem solid ${({ theme }) => theme.color.black};
-  font-family: "Istok Web", sans-serif;
-  font-weight: 600;
-
-  @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
-    margin-left: 2.5%;
-  }
-
-  h2 {
-    text-transform: uppercase;
-    color: ${({ theme }) => theme.color.black};
   }
 `;
 

@@ -18,7 +18,9 @@ const Navbar = () => {
       <Header>
         <NavContainer>
           <Logo to="/">
-            <h2>Alto</h2>
+            <h2>
+              es<span>o</span>ft
+            </h2>
           </Logo>
           <HamburgerStyle>
             <Hamburger
