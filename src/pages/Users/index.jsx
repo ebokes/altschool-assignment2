@@ -47,7 +47,7 @@ const Users = () => {
     return <Loading />;
   }
 
-  const PER_PAGE = 12;
+  const PER_PAGE = 6;
   const total = users?.length;
   const pages = Math.ceil(total / PER_PAGE);
   const skip = page * PER_PAGE - PER_PAGE;

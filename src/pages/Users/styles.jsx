@@ -51,7 +51,6 @@ export const Card = styled.div`
     height: 30rem;
     width: 30rem;
     top: -22rem;
-    transform: rotate(45deg);
     border-radius: 50%;
   }
 
@@ -71,8 +70,9 @@ export const Paginate = styled.div`
 
 export const ButtonGroup = styled.div`
   display: flex;
-  margin-bottom: 3rem;
   gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0 auto 3rem auto;
 
   button {
     width: 4rem;
