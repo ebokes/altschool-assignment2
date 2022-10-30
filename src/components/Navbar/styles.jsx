@@ -31,6 +31,83 @@ export const Menu = styled.ul`
   z-index: 20;
   /* margin-right: 5%; */
 
+  .normal {
+    color: ${({ theme }) => theme.color.black};
+    display: flex;
+    transition: all 0.4s;
+    position: relative;
+    padding-bottom: 0.3rem;
+    transition: all 0.5s ease-in-out;
+    font-family: "Istok Web", sans-serif;
+    font-weight: 600;
+
+    :hover {
+      color: ${({ theme }) => theme.color.primary};
+
+      @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
+        color: #000;
+      }
+    }
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 0.2rem;
+      background-color: ${({ theme }) => theme.color.primary};
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: transform 250ms ease-in;
+      transform: scaleX(0);
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+      background-color: ${({ theme }) => theme.color.primary};
+
+      @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
+        transform: scaleX(0);
+        color: ${({ theme }) => theme.color.black};
+      }
+    }
+  }
+
+  .active {
+    color: ${({ theme }) => theme.color.primary};
+    display: flex;
+    transition: all 0.4s;
+    position: relative;
+    padding-bottom: 0.3rem;
+    transition: all 0.5s ease-in-out;
+    font-family: "Istok Web", sans-serif;
+    font-weight: 600;
+
+    :hover {
+      color: ${({ theme }) => theme.color.primary};
+
+      @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
+        color: #000;
+      }
+    }
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 0.2rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: transform 250ms ease-in;
+      transform: scaleX(1);
+      background-color: ${({ theme }) => theme.color.primary};
+
+      @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
+        transform: scaleX(0);
+        color: ${({ theme }) => theme.color.black};
+      }
+    }
+  }
+
   /* mobile */
   @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
     display: flex;
@@ -62,9 +139,9 @@ export const Menu = styled.ul`
           opacity: 1;
         }
       }
-      &:not(:last-child) {
+      /* &:not(:last-child) {
         border-bottom: 1px solid #999;
-      }
+      } */
     }
   }
 
@@ -95,12 +172,10 @@ export const Logo = styled(NavLink)`
   align-self: center;
   width: 7rem;
   height: 3.5rem;
-
   border-top: 0.2rem solid ${({ theme }) => theme.color.black};
   border-bottom: 0.2rem solid ${({ theme }) => theme.color.black};
   font-family: "Istok Web", sans-serif;
   font-weight: 600;
-  /* margin-left: 5%; */
 
   @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
     margin-left: 2.5%;
@@ -124,95 +199,4 @@ export const HamburgerStyle = styled.span`
   @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
     padding-right: 2%;
   }
-`;
-
-export const ButtonLink = styled(NavLink)`
-  color: ${({ theme }) => theme.color.black};
-  display: flex;
-  transition: all 0.4s;
-  position: relative;
-  padding-bottom: 0.3rem;
-  transition: all 0.5s ease-in-out;
-  font-family: "Istok Web", sans-serif;
-  font-weight: 600;
-
-  :hover {
-    color: #feb72b;
-
-    @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
-      color: #000;
-    }
-  }
-
-  &::before {
-    content: "";
-    width: 100%;
-    height: 0.2rem;
-    background-color: #feb72b;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: transform 250ms ease-in;
-    transform: scaleX(0);
-  }
-
-  &:hover::before {
-    transform: scaleX(1);
-    background-color: #feb72b;
-
-    @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
-      transform: scaleX(0);
-      color: ${({ theme }) => theme.color.black};
-    }
-  }
-`;
-
-export const ContactLink = styled(NavLink)`
-  background-color: ${({ theme }) => theme.color.primary};
-  color: ${({ theme }) => theme.color.black};
-  display: flex;
-  transition: all 0.4s;
-  position: relative;
-  padding: 1rem 2rem;
-  /* padding-bottom: 0.3rem; */
-  transition: all 0.5s ease-in-out;
-  font-family: "Istok Web", sans-serif;
-  font-weight: 600;
-  border-radius: 2rem;
-  margin-bottom: 0.3rem;
-  outline: red;
-
-  :hover {
-    color: #fff;
-    @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
-      color: #000;
-    }
-  }
-
-  @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
-    background-color: transparent;
-    padding: 0;
-    /* color: ${({ theme }) => theme.color.white}; */
-  }
-
-  /* &::before {
-    content: "";
-    width: 100%;
-    height: 0.2rem;
-    background-color: #feb72b;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: transform 250ms ease-in;
-    transform: scaleX(0);
-  }
-
-  &:hover::before {
-    transform: scaleX(1);
-    background-color: #feb72b;
-
-    @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
-      transform: scaleX(0);
-    } */
-  /* } */
 `;

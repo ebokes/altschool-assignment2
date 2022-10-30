@@ -1,13 +1,7 @@
 import React, { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import { Container, Section } from "../../components/reuseable";
-import {
-  Output,
-  ProfileContainer,
-  ProfileLinks,
-  ProfileWrapper,
-  SideBar,
-} from "./styles";
+import { Output, ProfileContainer, ProfileWrapper, SideBar } from "./styles";
 
 const Profile = () => {
   const [show, setShow] = useState(false);
@@ -20,14 +14,22 @@ const Profile = () => {
           <ProfileContainer>
             <SideBar>
               <li>
-                <ProfileLinks onClick={handleShow} to="/profile/users">
+                <NavLink
+                  onClick={handleShow}
+                  to="/profile/users"
+                  className={({ isActive }) => (isActive ? "active" : "normal")}
+                >
                   Users
-                </ProfileLinks>
+                </NavLink>
               </li>
               <li>
-                <ProfileLinks onClick={handleShow} to="/profile/about">
+                <NavLink
+                  onClick={handleShow}
+                  to="/profile/about"
+                  className={({ isActive }) => (isActive ? "active" : "normal")}
+                >
                   About
-                </ProfileLinks>
+                </NavLink>
               </li>
             </SideBar>
             {show && (

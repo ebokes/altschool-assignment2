@@ -1,17 +1,19 @@
-// import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import Users from "./pages/Users/index";
-import Navbar from "./components/Navbar";
+import ErrorBoundary from "./pages/Error/ErrorBoundary";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./GlobalStyles";
-import Home from "./pages/Home";
-import Contact from "./pages/Contact";
-import Footer from "./components/Footer";
 import { Route, Routes } from "react-router-dom";
-import Profile from "./pages/Profile";
+import { lazy, Suspense } from "react";
+import Loading from "./components/Loading";
 import ErrorPage from "./pages/Error/ErrorPage";
-import ErrorBoundary from "./pages/Error/ErrorBoundary";
-import About from "./pages/About";
+
+// import Users from "./pages/Users/index";
+let Navbar = lazy(() => import("./components/Navbar"));
+let Home = lazy(() => import("./pages/Home"));
+let Contact = lazy(() => import("./pages/Contact"));
+let Footer = lazy(() => import("./components/Footer"));
+let Profile = lazy(() => import("./pages/Profile"));
+let About = lazy(() => import("./pages/About"));
+let Users = lazy(() => import("./pages/Users/index"));
 
 function App() {
   const theme = {
@@ -37,17 +39,19 @@ function App() {
       <ThemeProvider theme={theme}>
         <ErrorBoundary>
           <GlobalStyles />
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/profile" element={<Profile />}>
-              <Route path="users" element={<Users />} />
-              <Route path="about" element={<About />} />
-            </Route>
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<ErrorPage />} />
-          </Routes>
-          <Footer />
+          <Suspense fallback={<Loading />}>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/profile" element={<Profile />}>
+                <Route path="users" element={<Users />} />
+                <Route path="about" element={<About />} />
+              </Route>
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<ErrorPage />} />
+            </Routes>
+            <Footer />
+          </Suspense>
         </ErrorBoundary>
       </ThemeProvider>
     </>

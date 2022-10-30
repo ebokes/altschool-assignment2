@@ -17,6 +17,7 @@ export const Heading = styled.div`
   margin-bottom: 3rem;
   color: ${({ theme }) => theme.color.white};
   font-size: 3rem;
+  text-align: center;
 `;
 export const InputWrapper = styled.div`
   display: flex;

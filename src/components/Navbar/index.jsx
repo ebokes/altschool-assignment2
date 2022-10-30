@@ -1,19 +1,11 @@
 import * as React from "react";
 import { useState } from "react";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
-import {
-  Header,
-  NavContainer,
-  Logo,
-  ButtonLink,
-  HamburgerStyle,
-  Menu,
-  ContactLink,
-} from "./styles";
+import { Header, NavContainer, Logo, HamburgerStyle, Menu } from "./styles";
 import { Sling as Hamburger } from "hamburger-react";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  // const [navColor, setNavColor] = useState(false);
   const [isOpen, setOpen] = useState(false);
   const handleClose = () => setOpen(false);
 
@@ -41,19 +33,32 @@ const Navbar = () => {
           </HamburgerStyle>
           <Menu isOpen={isOpen}>
             <li>
-              <ButtonLink onClick={handleClose} to="/">
+              <NavLink
+                onClick={handleClose}
+                to="/"
+                className={({ isActive }) => (isActive ? "active" : "normal")}
+                end
+              >
                 Home
-              </ButtonLink>
+              </NavLink>
             </li>
             <li>
-              <ButtonLink onClick={handleClose} to="/profile">
+              <NavLink
+                onClick={handleClose}
+                to="/profile"
+                className={({ isActive }) => (isActive ? "active" : "normal")}
+              >
                 Profile
-              </ButtonLink>
+              </NavLink>
             </li>
             <li>
-              <ContactLink onClick={handleClose} to="/contact">
+              <NavLink
+                onClick={handleClose}
+                to="/contact"
+                className={({ isActive }) => (isActive ? "active" : "normal")}
+              >
                 Contact
-              </ContactLink>
+              </NavLink>
             </li>
           </Menu>
         </NavContainer>

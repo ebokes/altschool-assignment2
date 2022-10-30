@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const ProfileWrapper = styled.div`
@@ -37,12 +36,16 @@ export const SideBar = styled.ul`
   li {
     border: 1px solid ${({ theme }) => theme.color.border};
     padding: 1rem;
-  }
-`;
 
-export const ProfileLinks = styled(NavLink)`
-  color: #000;
-  font-weight: 600;
+    .normal {
+      color: ${({ theme }) => theme.color.black};
+      font-weight: 600;
+    }
+    .active {
+      color: ${({ theme }) => theme.color.primary};
+      font-weight: 600;
+    }
+  }
 `;
 
 export const Output = styled.div`
