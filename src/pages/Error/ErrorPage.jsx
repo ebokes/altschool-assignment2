@@ -7,7 +7,7 @@ const ErrorPage = () => {
     <Section>
       <Container>
         <Error>
-          <h2>404 Error Page</h2>
+          <h2>404... Page not found</h2>
         </Error>
       </Container>
     </Section>

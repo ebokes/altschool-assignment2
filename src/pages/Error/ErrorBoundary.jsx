@@ -1,4 +1,5 @@
 import React from "react";
+import { ErrorBoundarySection, Heading } from "./styles";
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -17,7 +18,11 @@ class ErrorBoundary extends React.Component {
 
   render() {
     if (this.state.hasError) {
-      return <h1>Oops! Something went wrong</h1>;
+      return (
+        <ErrorBoundarySection>
+          <Heading>Oops! Something went wrong</Heading>
+        </ErrorBoundarySection>
+      );
     }
     return this.props.children;
   }

@@ -23,7 +23,7 @@ const Users = () => {
   const ref = useRef(null);
 
   const client = axios.create({
-    baseURL: "https://randomuser.me/",
+    baseURL: "https://randomuser.me",
   });
 
   useEffect(() => {

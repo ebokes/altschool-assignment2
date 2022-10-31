@@ -1,13 +1,17 @@
-import React, { useState } from "react";
-import { NavLink, Outlet, useParams } from "react-router-dom";
+import React, { useRef, useState } from "react";
+import { NavLink, Outlet } from "react-router-dom";
 import { Container, Section } from "../../components/reuseable";
 import { Output, ProfileContainer, ProfileWrapper, SideBar } from "./styles";
-import coreValues from "../Values/data";
 
 const Profile = () => {
   const [show, setShow] = useState(false);
-  const handleShow = () => setShow(true);
-  // const coreValues = ["Mission", "Vision"];
+  const handleShow = () => {
+    setShow(true);
+    handleClick();
+  };
+  const handleClick = () => ref.current?.scrollIntoView({ behavior: "smooth" });
+  const ref = useRef(null);
+
   return (
     <Section>
       <Container>
@@ -21,15 +25,7 @@ const Profile = () => {
             implementation. Esoft has considerable experience delivering
             solutions in single and multi operating system environments.
           </p>
-          <p>
-            Esoft through its alliances is able to attain goals and objectives
-            which one company cannot achieve alone. These are based on a win-win
-            mindset, mutual trust, commitment and the sharing of risks and
-            rewards to benefit customers directly. Our professionals have
-            several hundred person-years of experience consulting with
-            organizations and implementing our proposed and customer desired
-            solutions.
-          </p>
+
           <ProfileContainer>
             <SideBar>
               <li>
@@ -50,22 +46,9 @@ const Profile = () => {
                   About
                 </NavLink>
               </li>
-              {/* {coreValues.map((item) => (
-                <li key={item.id}>
-                  <NavLink
-                    onClick={handleShow}
-                    to={`/profile/${item.link}`}
-                    className={({ isActive }) =>
-                      isActive ? "active" : "normal"
-                    }
-                  >
-                    {item.title}
-                  </NavLink>
-                </li>
-              ))} */}
             </SideBar>
             {show && (
-              <Output>
+              <Output ref={ref}>
                 <div>
                   <Outlet />
                 </div>

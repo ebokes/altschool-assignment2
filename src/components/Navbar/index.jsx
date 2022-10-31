@@ -70,17 +70,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-{
-  /* <div className="nav-links">
-  <NavLink className="nav-link" to="/">
-    Home
-  </NavLink>
-  <NavLink className="nav-link" to="/about">
-    About
-  </NavLink>
-  <NavLink className="nav-link" to="/profile">
-    Profile
-  </NavLink>
-</div> */
-}

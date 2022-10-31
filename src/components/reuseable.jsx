@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Section = styled.section`
   background-color: ${({ bgcolor }) => bgcolor};
   width: 100%;
-  padding: 9rem 0 5rem 0;
+  padding: 5rem 0 5rem 0;
   overflow: hidden;
 `;
 

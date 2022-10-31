@@ -1,7 +1,6 @@
 import React from "react";
 import { Container } from "../../components/reuseable";
-import { Col1, Col2, HomeSection, More, Row } from "./styles";
-import lady from "../../assets/lady.png";
+import { Col1, HomeSection, More, Row } from "./styles";
 
 const Home = () => {
   return (
@@ -21,9 +20,6 @@ const Home = () => {
             </p>
             <More to="/contact">learn more</More>
           </Col1>
-          <Col2>
-            <img src={lady} alt="happy-lady" />
-          </Col2>
         </Row>
       </Container>
     </HomeSection>

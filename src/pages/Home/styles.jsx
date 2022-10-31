@@ -4,37 +4,35 @@ import bg from "../../assets/bg.jpg";
 import { NavLink } from "react-router-dom";
 
 export const HomeSection = styled(Section)`
-  background: url(${bg});
+  background: linear-gradient(#2324349f, #2324349f), url(${bg});
   height: 100vh;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   overflow: hidden;
   position: relative;
-  /* padding: 0; */
+  display: flex;
+  justify-content: center;
+  /* margin: 0 auto; */
+  width: 100%;
 `;
 
 export const Row = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 100%;
-  margin-top: 20rem;
-
-  @media screen and (max-width: ${({ theme }) => theme.screens.md}) {
-    margin-top: 15rem;
-  }
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 export const Col1 = styled.div`
-  width: 50%;
+  max-width: 75rem;
   font-family: "Istok Web", sans-serif;
   color: ${({ theme }) => theme.color.white};
-
-  @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
-    width: 100%;
-    text-align: center;
-  }
+  text-align: center;
 
   h4 {
     font-size: 2rem;
@@ -46,6 +44,10 @@ export const Col1 = styled.div`
     font-weight: 700;
     font-family: "Rajdhani", sans-serif;
     line-height: 1;
+
+    @media screen and (max-width: ${({ theme }) => theme.screens.xsm}) {
+      font-size: 5rem;
+    }
   }
   p {
     font-size: 1.8rem;
@@ -61,28 +63,6 @@ export const Col1 = styled.div`
     text-transform: uppercase;
     margin-top: 2rem;
   }
-`;
-export const Col2 = styled.div`
-  width: 50%;
-  height: 100%;
-
-  @media screen and (max-width: ${({ theme }) => theme.screens.lg}) {
-    display: none;
-  }
-
-  img {
-    max-width: 100%;
-    position: absolute;
-    bottom: 0;
-
-    @media screen and (max-width: 1300px) {
-      width: 50%;
-    }
-  }
-`;
-
-export const ImgWrapper = styled.div`
-  height: 100%;
 `;
 
 export const More = styled(NavLink)``;
