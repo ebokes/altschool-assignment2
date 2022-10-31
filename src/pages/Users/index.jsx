@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-// import { NavLink, useParams } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import Loading from "../../components/Loading";
 import {
@@ -21,6 +20,7 @@ const Users = () => {
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
+  const ref = useRef(null);
 
   const client = axios.create({
     baseURL: "https://randomuser.me/",
@@ -41,8 +41,6 @@ const Users = () => {
     getUsers();
   }, []);
 
-  console.log(users);
-
   if (loading) {
     return <Loading />;
   }
@@ -53,7 +51,7 @@ const Users = () => {
   const skip = page * PER_PAGE - PER_PAGE;
 
   return (
-    <UsersWrapper>
+    <UsersWrapper ref={ref}>
       <BackDrop>
         <MainHeading>Our Subscribers</MainHeading>
       </BackDrop>
@@ -87,13 +85,22 @@ const Users = () => {
             <Prev
               disabled={page <= 1}
               aria-disabled={page <= 1}
-              onClick={() => setPage((prev) => prev - 1)}
+              onClick={() => {
+                setPage((prev) => prev - 1);
+                ref.current?.scrollIntoView({ behavior: "smooth" });
+              }}
             >
               Prev
             </Prev>
             {Array.from({ length: pages }, (value, index) => index + 1).map(
               (user) => (
-                <Pagebtn key={user} onClick={() => setPage(user)}>
+                <Pagebtn
+                  key={user}
+                  onClick={() => {
+                    setPage(user);
+                    ref.current?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
                   {user}
                 </Pagebtn>
               )
@@ -101,7 +108,10 @@ const Users = () => {
             <Next
               disabled={page >= pages}
               aria-disabled={page >= pages}
-              onClick={() => setPage((prev) => prev + 1)}
+              onClick={() => {
+                setPage((prev) => prev + 1);
+                ref.current?.scrollIntoView({ behavior: "smooth" });
+              }}
             >
               Next
             </Next>
@@ -113,30 +123,3 @@ const Users = () => {
 };
 
 export default Users;
-
-// import React from "react";
-// import { Card, CardWrapper, Paginate, UsersContainer } from "./styles";
-// import picture from "../../assets/lady.png";
-
-// const Users = () => {
-//   return (
-//     <UsersContainer>
-//       <CardWrapper>
-//         <Card>
-//           <img src={picture} alt="" className="avatar" />
-//           <h3>James Bond</h3>
-//           <p>jane@bomgo.com</p>
-//           <p>@emldrf</p>
-//           <div>
-//             <p>Phone: 09039508432</p>
-//             <p>Age: 23</p>
-//             <p>Country: Norway</p>
-//           </div>
-//         </Card>
-//       </CardWrapper>
-//       <Paginate></Paginate>
-//     </UsersContainer>
-//   );
-// };
-
-// export default Users;
