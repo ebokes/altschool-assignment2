@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Loading from "./components/Loading";
 import ErrorPage from "./pages/Error/ErrorPage";
+import ErrorBoundaryTest from "./pages/Error/ErrorBoundaryTest";
 
 let Navbar = lazy(() => import("./components/Navbar"));
 let Home = lazy(() => import("./pages/Home"));
@@ -46,6 +47,7 @@ function App() {
                 <Route path="users" element={<Users />} />
                 <Route path="about" element={<About />} />
               </Route>
+              <Route path="/error" element={<ErrorBoundaryTest />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<ErrorPage />} />
             </Routes>

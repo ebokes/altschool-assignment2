@@ -56,6 +56,15 @@ const Navbar = () => {
             <li>
               <NavLink
                 onClick={handleClose}
+                to="/error"
+                className={({ isActive }) => (isActive ? "active" : "normal")}
+              >
+                Error Test
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                onClick={handleClose}
                 to="/contact"
                 className={({ isActive }) => (isActive ? "active" : "normal")}
               >
