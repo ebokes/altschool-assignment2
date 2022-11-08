@@ -27,12 +27,6 @@ const ErrorBoundaryTest = () => {
           {decrement === 3 ? "" : decrement === 2 ? "more " : "last "}
           time
           {decrement !== 1 && "s"} to trigger an error
-          {counter === 2 && (
-            <span>
-              , refresh the page after the error has been set off to come back
-              to this page
-            </span>
-          )}
         </p>
       </div>
     </ErrorTestContainer>
